@@ -1,0 +1,92 @@
+:root{
+  --header-h: 80px;
+  --nav-h: 54px;
+  --footer-h: 140px;
+  --left-gutter: auto;   /* outer left gutter (kept auto) */
+  --left-w: 3fr;         /* main / aside ratio will be 3fr / 1fr */
+  --right-w: 1fr;
+  --right-gutter: auto;  /* outer right gutter */
+  --gap: 0;
+  --dark: #333;
+  --nav-bg: #000;
+  --main-bg: #dcdcdc;
+  --aside-bg: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* HOLY GRAIL container: rows / columns shorthand */
+.page{
+  min-height: 100vh;
+  display: grid;
+  grid-template: var(--header-h) var(--nav-h) 1fr var(--footer-h)
+                 / var(--left-gutter) var(--left-w) var(--right-w) var(--right-gutter);
+  gap: var(--gap);
+  background: #f6f7f8;
+  color: #222;
+  box-sizing: border-box;
+}
+
+/* header spans the inner columns (2..4) to match full-width look across center */
+.site-header{
+  grid-column: 2 / 4;   /* starts at column line 2, ends before column line 4 */
+  grid-row: 1;
+  background: linear-gradient(#444,#333);
+  color: #fff;
+  padding: 18px 28px;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+
+/* nav bar centered under header across same central columns */
+.site-nav{
+  grid-column: 2 / 4;
+  grid-row: 2;
+  background: var(--nav-bg);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap: 72px;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+.site-nav a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px 8px;
+}
+
+/* content row: left/main/right occupy columns 2,3,4 */
+.main{
+  grid-column: 2 / 3; /* the large center region in the original is left-of-center; to keep original format we put 'main' in column 2 (3fr) */
+  grid-row: 3;
+  background: var(--main-bg);
+  padding: 28px;
+  box-sizing: border-box;
+  min-height: 320px;
+}
+
+/* aside on the right */
+.aside{
+  grid-column: 3 / 4;
+  grid-row: 3;
+  background: var(--aside-bg);
+  padding: 24px;
+  box-sizing: border-box;
+  min-height: 320px;
+}
+
+/* footer spans the inner columns */
+.site-footer{
+  grid-column: 2 / 4;
+  grid-row: 4;
+  background: linear-gradient(#444,#333);
+  color: #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  padding: 22px;
+  box-sizing: border-box;
+}
+
