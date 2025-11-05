@@ -171,20 +171,24 @@ body.page {
 }
 
 /* dev-site-list */
-.dev-site-list ul{
+.dev-site-list{
+  display: flex;
+  flex-direction: column;
+}
+.dev-site-list a{
   list-style:none;
   padding:0;
   margin:8px 0;
   text-align: center;
 }
-.dev-site-list ul a{
+.dev-site-list a{
   text-decoration:none;
   display:inline-block;
   padding:6px 0;
   font-weight:600;
   color: #2a5b76;
 }
-.dev-site-list ul a:hover{
+.dev-site-list a:hover{
   text-decoration: underline;
   text-underline-offset: 4px;
 }
