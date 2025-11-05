@@ -41,14 +41,14 @@ body.page {
 }
 
 /* span should be a block to easily center and stack */
-#course-title{
+span #course-title{
   display:block;
   font-family: 'Merriweather', serif;
   font-weight:700;
   font-size:1.35rem;
   letter-spacing:0.6px;
   margin: 6px 12px;
-  color: #f1fbff;
+  color: #1a1a1a;
 }
 
 /* NAV (flex) */
@@ -184,13 +184,11 @@ body.page {
   padding:0;
   margin:8px 0;
   text-align: center;
-}
-.dev-site-list a{
   text-decoration:none;
   display:inline-block;
   padding:6px 0;
   font-weight:600;
-  color: #2a5b76;
+  color: #0d47a1;
 }
 .dev-site-list a:hover{
   text-decoration: underline;
