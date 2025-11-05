@@ -158,6 +158,7 @@ span#course-title{
   color: #344a50;
   font-size:0.98rem;
   margin:6px 0 12px;
+  line-height: 2;
 }
 
 /* country description */
