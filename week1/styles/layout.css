@@ -28,7 +28,7 @@
 
 /* header spans the inner columns (2..4) to match full-width look across center */
 .site-header{
-  grid-column: 2 / 4;   /* starts at column line 2, ends before column line 4 */
+  grid-column: 1 / 4;   /* starts at column line 2, ends before column line 4 */
   grid-row: 1;
   background: linear-gradient(#444,#333);
   color: #fff;
