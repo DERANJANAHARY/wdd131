@@ -101,7 +101,7 @@ body.page {
   grid-column: 1 / -1; /* spans both columns */
   text-align: center;
   margin-bottom: 20px;
-  font-family: 'Merriweather', serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   color: var(--brand-dark);
 }
@@ -122,7 +122,7 @@ body.page {
 
 /* headings inside cards */
 .card h2{
-  font-family: 'Merriweather', serif;
+  font-family: "Roboto", sans-serif;
   color: var(--card-blue);
   margin: 6px 0 12px;
   font-size:1.25rem;
@@ -137,9 +137,6 @@ body.page {
   margin: 6px 0 14px;
   color: var(--brand-dark);
 }
-
-/* content columns */
-
 
 /* image styles */
 .me-description img,
@@ -163,6 +160,13 @@ body.page {
   margin:6px 0 12px;
 }
 
+/* country description */
+.country-description h3 {
+  color: var(--card-blue);
+  text-align: center;
+  text-decoration: underline;
+
+}
 /* For the flag in the right card: make it tidy */
 .country-description img {
   float:left;
