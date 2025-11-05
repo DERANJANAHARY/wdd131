@@ -6,7 +6,7 @@
   --brand-blue: #1f5270;      /* header bar */
   --brand-dark: #2b4f63;      /* darker header */
   --card-blue: #21607f;       /* card headings */
-  --accent: #f4d34a;          /* small accent if needed */
+  --accent: #bfa500;          /* small accent if needed */
   --muted: #6b7a82;
   --white: #ffffff;
   --radius: 10px;
@@ -41,14 +41,14 @@ body.page {
 }
 
 /* span should be a block to easily center and stack */
-span #course-title{
+span#course-title{
   display:block;
-  font-family: 'Merriweather', serif;
+  font-family: "Roboto", sans-serif;
   font-weight:700;
-  font-size:1.35rem;
+  font-size:1.5rem;
   letter-spacing:0.6px;
   margin: 6px 12px;
-  color: #1a1a1a;
+  color: #f1fbff;
 }
 
 /* NAV (flex) */
@@ -188,7 +188,7 @@ span #course-title{
   display:inline-block;
   padding:6px 0;
   font-weight:600;
-  color: #0d47a1;
+  color: #2a5b76;
 }
 .dev-site-list a:hover{
   text-decoration: underline;
