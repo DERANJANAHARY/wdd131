@@ -1,5 +1,5 @@
 /* Variables (theme) */
-:root {
+:root{
   --bg: #f3f6f8;
   --page-width: 1100px;
   --brand-blue: #1f5270;      /* header bar */
@@ -16,7 +16,7 @@
 
 /* Reset & Base */
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+html,body { height:100%; margin:0; }
 body.page {
   font-family: "Roboto", sans-serif;
   background: linear-gradient(180deg, #eaf3f7 0%, var(--bg) 100%);
@@ -24,62 +24,64 @@ body.page {
 }
 
 /* HEADER */
-.site-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.site-header{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
   background: linear-gradient(180deg, var(--brand-blue), var(--brand-dark));
-  color: var(--white);
+  color:var(--white);
   padding: 10px 0;
   border-radius: 8px;
   margin: 18px auto 20px;
   max-width: var(--page-width);
   box-shadow: 0 6px 16px rgba(27,44,58,0.18);
-  position: relative; /* for hamburger positioning */
+
+  /* make a positioning context for the hamburger */
+  position: relative;
 }
 
-/* course title */
-span#course-title {
+/* span should be a block to easily center and stack */
+span#course-title{
   font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.6px;
+  font-weight:700;
+  font-size:1.5rem;
+  letter-spacing:0.6px;
   margin: 12px 100px;
   color: #f1fbff;
 }
 
 /* NAV (flex) */
-.site-nav {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  justify-content: center;
+.site-nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  justify-content:center;
   padding: 8px 12px 12px;
-  flex-wrap: nowrap;
-  width: 100%;
-  max-width: 900px;
+  flex-wrap:nowrap;
+  width:100%;
+  max-width:900px;
 }
 
-/* links */
-.site-nav a {
-  display: inline-block;
-  text-decoration: none;
+/* link styles */
+.site-nav a{
+  display:inline-block;
+  text-decoration:none;
   color: rgba(255,255,255,0.95);
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  letter-spacing: 0.15px;
+  padding:8px 14px;
+  border-radius:6px;
+  font-size:0.95rem;
+  letter-spacing:0.15px;
 }
 
-/* hover / focus */
+/*  hover / active effect: subtle lift + darker bg and underline */
 .site-nav a:hover,
-.site-nav a:focus {
+.site-nav a:focus{
   transform: translateY(-2px);
   background: rgba(255,255,255,0.06);
   box-shadow: 0 6px 12px rgba(18,35,45,0.12);
   outline: none;
   text-decoration: underline;
-  text-underline-offset: 6px;
+  text-underline-offset:6px;
 }
 
 /* MAIN */
@@ -87,32 +89,40 @@ main {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .site-main {
   max-width: var(--page-width);
   margin: 10px auto;
   padding: 12px;
+
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr; /* 2/3 and 1/3 layout */
   gap: var(--gap);
   align-items: stretch;
 }
 
-/* name headline */
-.site-main .name,
-.name {
+/* make the <h1> span across both columns */
+.site-main .name {
   grid-column: 1 / -1;
   text-align: center;
-  margin: 6px 0 20px;
+  margin-bottom: 20px;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   color: var(--brand-dark);
-  font-family: 'Merriweather', serif;
 }
 
-/* grid container */
+/* name headline */
+.name{
+  text-align:center;
+  font-family: 'Merriweather', serif;
+  font-size:1.6rem;
+  margin: 6px 0 14px;
+  color: var(--brand-dark);
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;
+  /* Up to 3 columns, each as large as possible but not smaller than 300px */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
   padding: 1rem;
@@ -120,22 +130,23 @@ main {
   margin: 0 auto;
 }
 
-/* figures */
 figure {
   margin: 0;
-  border-radius: var(--radius);
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: transform 0.3s ease;
 }
 
+/* responsive images: fill their figure container and keep correct aspect */
 figure img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: cover; /* optional; better cropping when figures have fixed height */
 }
+
 
 figcaption {
   padding: 0.75rem;
@@ -146,22 +157,26 @@ figcaption {
 }
 
 /* FOOTER */
-.site-footer {
+.site-footer{
   max-width: var(--page-width);
   margin: 20px auto 40px;
   background: linear-gradient(180deg, var(--brand-blue), var(--brand-dark));
   color: var(--white);
   padding: 12px 18px;
   border-radius: 8px;
-  text-align: center;
+  text-align:center;
   box-shadow: 0 10px 24px rgba(22,44,61,0.12);
-  font-size: 0.95rem;
+  font-size:0.95rem;
 }
+.site-footer p { margin:6px 0; color:#f7fbff; font-weight:500; }
 
-.site-footer p { margin: 6px 0; color: #f7fbff; font-weight: 500; }
-#lastModified { color: #fff58d; font-size: 0.85rem; margin-top: 6px; }
+/* small muted timestamp */
+#lastModified { color: #fff58d; font-size:0.85rem; margin-top:6px; }
 
-/* HAMBURGER / MOBILE NAV */
+
+/* ---------- HAMBURGER / MOBILE NAV ---------- */
+
+/* hamburger button */
 #menu {
   position: absolute;
   top: 12px;
@@ -179,38 +194,51 @@ figcaption {
   justify-content: center;
 }
 
+/* icons via pseudo */
 #menu::before { content: "☰"; }
 #menu.open::before { content: "❌"; }
 
-/* mobile nav collapsed */
+/* mobile: collapse the nav by default (vertical layout) */
 .site-nav {
   flex-direction: column;
   gap: 0;
-  background: transparent;
+  background: transparent; /* header gradient remains behind */
   transition: max-height 260ms ease, padding 180ms ease;
   overflow: hidden;
   max-height: 0;
   padding: 0 12px;
 }
 
-.site-nav a { display: none; padding: 12px; width: 100%; }
+/* when nav is collapsed, hide link blocks (semantic still remain) */
+.site-nav a {
+  display: none;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
+/* open state: reveal the nav */
 .site-nav.open {
-  max-height: 1000px;
+  max-height: 1000px; /* enough to reveal all links */
   padding: 8px 12px 12px;
 }
 
-.site-nav.open a { display: block; }
+/* show links when open */
+.site-nav.open a {
+  display: block;
+}
 
+/* small tweak so links in the opened header look good */
 .site-header .site-nav.open a {
   color: rgba(255,255,255,0.95);
   background: rgba(255,255,255,0.03);
   margin: 6px 0;
 }
 
-/* media queries for larger screens */
+/* ensure button hidden on wide screens and nav returns to row layout */
 @media (min-width: 769px) {
-  #menu { display: none; }
+  #menu { display: none; }      /* hide hamburger on larger screens */
   .site-nav {
     max-height: none;
     overflow: visible;
@@ -218,5 +246,7 @@ figcaption {
     align-items: center;
     padding: 8px 12px 12px;
   }
+
   .site-nav a { display: inline-block; margin: 0; }
 }
+
