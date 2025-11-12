@@ -251,27 +251,3 @@ figcaption {
   .site-nav a { display: inline-block; margin: 0; }
 }
 
-/* Tablets */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Small tablets / large phones */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Slight spacing tweak so the header doesn't feel cramped */
-  span#course-title { margin: 12px 60px; font-size: 1.35rem; }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .grid { grid-template-columns: 1fr; }
-
-  /* make title smaller and remove big margins on tiny screens */
-  span#course-title { margin: 12px 36px; font-size: 1.1rem; }
-}
