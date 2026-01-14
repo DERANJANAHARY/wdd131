@@ -1,7 +1,7 @@
 
 /* Variables (theme) */
 :root{
-  --bg: #f3f6f8;
+  --bg: #ffffff;
   --page-width: 1100px;
   --brand-blue: #1f5270;      /* header bar */
   --brand-dark: #2b4f63;      /* darker header */
@@ -48,7 +48,7 @@ span#course-title{
   font-size:1.5rem;
   letter-spacing:0.6px;
   margin: 6px 12px;
-  color: #f1fbff;
+  color: var(--white);
 }
 
 /* NAV (flex) */
@@ -66,7 +66,7 @@ span#course-title{
 .site-nav a{
   display:inline-block;
   text-decoration:none;
-  color: rgba(255,255,255,0.95);
+  color: var(--white);
   padding:8px 14px;
   border-radius:6px;
   font-size:0.95rem;
