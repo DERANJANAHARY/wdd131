@@ -1,4 +1,4 @@
-/* Variables (theme) */
+/* ---------------- VARIABLES (THEME) ---------------- */
 :root {
   --bg: #f3f6f8;
   --page-width: 1100px;
@@ -14,7 +14,7 @@
   --gap: 18px;
 }
 
-/* Reset & Base */
+/* ---------------- RESET & BASE ---------------- */
 * { box-sizing: border-box; }
 html, body { height:100%; margin:0; }
 body.page {
@@ -23,11 +23,11 @@ body.page {
   color: #090d0f;
 }
 
-/* HEADER */
+/* ---------------- HEADER ---------------- */
 .site-header {
-  display:flex;
-  flex-direction:row;
-  justify-content:space-around;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   background: linear-gradient(180deg, var(--brand-blue), var(--brand-dark));
   color: var(--white);
   padding: 10px 0;
@@ -41,36 +41,40 @@ body.page {
 /* Header title */
 span#course-title {
   font-family: "Roboto", sans-serif;
-  font-weight:700;
-  font-size:1.5rem;
-  letter-spacing:0.6px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.6px;
   margin: 12px 100px;
   color: #f1fbff;
 }
 
-/* NAV */
+/* ---------------- NAV ---------------- */
 .site-nav {
-  display:flex;
-  gap:18px;
-  align-items:center;
-  justify-content:center;
-  padding: 8px 12px 12px;
-  flex-wrap:nowrap;
-  width:100%;
-  max-width:900px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+  flex-wrap: nowrap;
+  padding: 8px 12px 12px; /* default desktop */
+  transition: max-height 260ms ease, padding 180ms ease;
+  overflow: visible;
+  flex-direction: row;
+  background: transparent;
 }
 
-/* links */
 .site-nav a {
-  display:inline-block;
-  text-decoration:none;
+  display: inline-block;
+  text-decoration: none;
   color: rgba(255,255,255,0.95);
-  border-radius:6px;
-  font-size:0.95rem;
-  letter-spacing:0.15px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  letter-spacing: 0.15px;
+  width: auto;
+  box-sizing: content-box;
 }
 
-/* hover / focus */
 .site-nav a:hover,
 .site-nav a:focus {
   transform: translateY(-2px);
@@ -78,10 +82,10 @@ span#course-title {
   box-shadow: 0 6px 12px rgba(18,35,45,0.12);
   outline: none;
   text-decoration: underline;
-  text-underline-offset:6px;
+  text-underline-offset: 6px;
 }
 
-/* MAIN */
+/* ---------------- MAIN ---------------- */
 main {
   max-width: 800px;
   margin: 0 auto;
@@ -103,7 +107,7 @@ main {
   text-align: center;
   margin: 6px 0 14px;
   font-family: 'Merriweather', serif;
-  font-size:1.6rem;
+  font-size: 1.6rem;
   color: var(--brand-dark);
 }
 
@@ -142,7 +146,7 @@ figcaption {
   background: #f8f8f8;
 }
 
-/* FOOTER */
+/* ---------------- FOOTER ---------------- */
 .site-footer {
   max-width: var(--page-width);
   margin: 20px auto 40px;
@@ -150,14 +154,25 @@ figcaption {
   color: var(--white);
   padding: 12px 18px;
   border-radius: 8px;
-  text-align:center;
+  text-align: center;
   box-shadow: 0 10px 24px rgba(22,44,61,0.12);
-  font-size:0.95rem;
+  font-size: 0.95rem;
 }
-.site-footer p { margin:6px 0; color:#f7fbff; font-weight:500; }
-#lastModified { color: #fff58d; font-size:0.85rem; margin-top:6px; }
 
-/* HAMBURGER / MOBILE NAV */
+.site-footer p {
+  margin: 6px 0;
+  color: #f7fbff;
+  font-weight: 500;
+}
+
+/* small muted timestamp */
+#lastModified {
+  color: #fff58d;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* ---------------- HAMBURGER / MOBILE NAV ---------------- */
 #menu {
   position: absolute;
   top: 12px;
@@ -177,36 +192,35 @@ figcaption {
 #menu::before { content: "☰"; }
 #menu.open::before { content: "❌"; }
 
-.site-nav {
-  flex-direction: column;
-  background: transparent;
-  transition: max-height 260ms ease, padding 180ms ease;
-  overflow: hidden;
-  max-height: 0;
-  padding: 0 12px;
-}
+@media (max-width: 768px) {
+  .site-nav {
+    flex-direction: column;
+    max-height: 0;
+    padding: 0 12px;
+    overflow: hidden;
+  }
 
-.site-nav a { display: none; width: 100%; box-sizing: border-box; }
+  .site-nav a {
+    display: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
 
-.site-nav.open {
-  max-height: 1000px;
-  padding: 8px 12px 12px;
-}
-.site-nav.open a { display: block; }
-.site-header .site-nav.open a {
-  color: rgba(255,255,255,0.95);
-  background: rgba(255,255,255,0.03);
-  margin: 6px 0;
+  .site-nav.open {
+    max-height: 1000px;
+    padding: 8px 12px 12px;
+  }
+
+  .site-nav.open a {
+    display: block;
+    background: rgba(255,255,255,0.03);
+    margin: 6px 0;
+    color: rgba(255,255,255,0.95);
+  }
+
+  #menu { display: inline-flex; }
 }
 
 @media (min-width: 769px) {
   #menu { display: none; }
-  .site-nav {
-    max-height: none;
-    overflow: visible;
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 12px 12px;
-  }
-  .site-nav a { display: inline-block; margin: 0; }
 }
