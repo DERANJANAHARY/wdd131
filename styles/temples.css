@@ -200,7 +200,6 @@ figcaption {
 /* mobile: collapse the nav by default (vertical layout) */
 .site-nav {
   flex-direction: column;
-  gap: 0;
   background: transparent; /* header gradient remains behind */
   transition: max-height 260ms ease, padding 180ms ease;
   overflow: hidden;
@@ -211,7 +210,6 @@ figcaption {
 /* when nav is collapsed, hide link blocks (semantic still remain) */
 .site-nav a {
   display: none;
-  padding: 12px;
   border-radius: 6px;
   width: 100%;
   box-sizing: border-box;
