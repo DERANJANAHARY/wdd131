@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madagascar</title>
+  <link rel="stylesheet" href="styles/place.css">
+  <script defer src="scripts/place.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Madagascar</h1>
+  </header>
+
+  <main class="hero">
+    <picture>
+      <!-- Mobile image -->
+      <source srcset="images/baobab-madagascar.webp" media="(max-width: 768px)">
+      <!-- Desktop image -->
+      <img src="images/small-madagascar.webp" alt="Ring-tailed lemurs in Madagascar">
+    </picture>
+
+    <!-- DATA CARD -->
+    <section class="card data">
+      <h2>Data</h2>
+      <ul>
+        <li><strong>Area:</strong> 587,041 sq km</li>
+        <li><strong>Population:</strong> 27,691,018</li>
+        <li><strong>Capital:</strong> Antananarivo</li>
+        <li><strong>Languages:</strong> Malagasy, French</li>
+        <li><strong>Currency:</strong> Malagasy Ariary</li>
+        <li><strong>Time Zone:</strong> UTC+3</li>
+        <li><strong>Calling Code:</strong> +261</li>
+        <li><strong>Internet TLD:</strong> .mg</li>
+      </ul>
+    </section>
+
+    <!-- WEATHER CARD -->
+    <section class="card weather">
+      <h2>Weather <span class="icon">⛅</span></h2>
+      <p><strong>Temperature:</strong> <span id="temp">10</span> °C</p>
+      <p><strong>Conditions:</strong> Partly Cloudy</p>
+      <p><strong>Wind:</strong> <span id="wind">5</span> km/h</p>
+      <p><strong>Wind Chill:</strong> <span id="chill"></span> °C</p>
+    </section>
+  </main>
+
+    <footer class="site-footer">
+        <p>&copy;<span id="currentyear"></span> &#10024; DERANJANAHARY &#10024; Madagascar</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
