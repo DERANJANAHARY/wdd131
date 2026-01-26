@@ -1,19 +1,38 @@
-/* RESET */
+/* =======================
+   GLOBAL VARIABLES
+======================= */
+:root {
+  --red: #c8102e;
+  --green: #137446;
+  --white: #ffffff;
+  --overlay: rgba(255, 255, 255, 0.9);
+  --text-dark: #222;
+}
+
+/* =======================
+   RESET
+======================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =======================
+   BASE STYLES
+======================= */
 body {
   font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-dark);
   line-height: 1.5;
 }
 
-/* HEADER */
+/* =======================
+   HEADER
+======================= */
 header {
-  background-color: #c8102e;
-  color: white;
+  background-color: var(--red);
+  color: var(--white);
   text-align: center;
   padding: 1rem;
 }
@@ -22,7 +41,9 @@ header h1 {
   font-size: 2rem;
 }
 
-/* HERO SECTION */
+/* =======================
+   HERO
+======================= */
 .hero {
   position: relative;
 }
@@ -33,22 +54,26 @@ header h1 {
   display: block;
 }
 
-/* CARDS */
+/* =======================
+   CARDS
+======================= */
 .card {
-  background: rgba(255, 255, 255, 0.9);
+  background-color: var(--overlay);
   padding: 1rem;
-  border-radius: 6px;
   margin: 1rem;
+  border-radius: 6px;
 }
 
 .card h2 {
-  background-color: #1f7a4f;
-  color: white;
+  background-color: var(--green);
+  color: var(--white);
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-/* LIST */
+/* =======================
+   DATA LIST
+======================= */
 .data ul {
   list-style: none;
 }
@@ -57,13 +82,25 @@ header h1 {
   margin-bottom: 0.4rem;
 }
 
-/* WEATHER */
+/* =======================
+   WEATHER
+======================= */
 .weather p {
   margin-bottom: 0.4rem;
 }
 
-/* DESKTOP LAYOUT */
+/* SVG icon (mobile only) */
+.weather-icon {
+  width: 48px;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* =======================
+   DESKTOP VIEW
+======================= */
 @media (min-width: 769px) {
+
   .data {
     position: absolute;
     top: 20%;
@@ -77,12 +114,24 @@ header h1 {
     right: 5%;
     width: 260px;
   }
+
+  /* Hide SVG icon on large view */
+  .weather-icon {
+    display: none;
+  }
+
+  /* REQUIRED pseudo-element weather icon */
+  .weather h2::after {
+    content: " ⛅";
+  }
 }
 
-/* FOOTER */
-footer {
-  background-color: #c8102e;
-  color: white;
+/* =======================
+   FOOTER
+======================= */
+.site-footer {
+  background-color: var(--red);
+  color: var(--white);
   text-align: center;
   padding: 1rem;
   margin-top: 1rem;
