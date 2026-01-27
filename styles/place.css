@@ -1,6 +1,4 @@
-/* =======================
-   GLOBAL VARIABLES
-======================= */
+/* GLOBAL VARIABLES */
 :root {
   --red: #c8102e;
   --green: #137446;
@@ -9,27 +7,21 @@
   --text-dark: #222;
 }
 
-/* =======================
-   RESET
-======================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =======================
-   BASE STYLES
-======================= */
+/* BASE STYLES */
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: var(--text-dark);
   line-height: 1.5;
 }
 
-/* =======================
-   HEADER
-======================= */
+/* HEADER */
 header {
   background-color: var(--red);
   color: var(--white);
@@ -41,9 +33,7 @@ header h1 {
   font-size: 2rem;
 }
 
-/* =======================
-   HERO
-======================= */
+/* HERO */
 .hero {
   position: relative;
 }
@@ -54,9 +44,7 @@ header h1 {
   display: block;
 }
 
-/* =======================
-   CARDS
-======================= */
+/* CARDS */
 .card {
   background-color: var(--overlay);
   padding: 1rem;
@@ -69,11 +57,10 @@ header h1 {
   color: var(--white);
   padding: 0.5rem;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
-/* =======================
-   DATA LIST
-======================= */
+/* DATA LIST */
 .data ul {
   list-style: none;
 }
@@ -82,23 +69,12 @@ header h1 {
   margin-bottom: 0.4rem;
 }
 
-/* =======================
-   WEATHER
-======================= */
+/* WEATHER */
 .weather p {
   margin-bottom: 0.4rem;
 }
 
-/* SVG icon (mobile only) */
-.weather-icon {
-  width: 48px;
-  display: block;
-  margin: 0.5rem auto;
-}
-
-/* =======================
-   DESKTOP VIEW
-======================= */
+/* DESKTOP VIEW + REQUIRED PSEUDO-ELEMENT */
 @media (min-width: 769px) {
 
   .data {
@@ -115,20 +91,25 @@ header h1 {
     width: 260px;
   }
 
-  /* Hide SVG icon on large view */
-  .weather-icon {
-    display: none;
+  .weather h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
-  /* REQUIRED pseudo-element weather icon */
+  /* REQUIRED pseudo-element with SVG */
   .weather h2::after {
-    content: " ⛅";
+    content: "";
+    width: 32px;
+    height: 32px;
+    background-image: url("../images/weather.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
-/* =======================
-   FOOTER
-======================= */
+/* FOOTER */
 .site-footer {
   background-color: var(--red);
   color: var(--white);
