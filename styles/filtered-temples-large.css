@@ -1,0 +1,32 @@
+/* hide hamburger and show row navigation */
+@media (min-width: 769px) {
+  #menu { display:none; }
+  .site-nav {
+    flex-direction: row;
+    align-items: center;
+    max-height: none;
+    overflow: visible;
+    padding: 8px 12px 12px;
+  }
+  .site-nav a { display: inline-block; margin:0; }
+  .site-main { grid-template-columns: 2fr 1fr; }
+  .grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  span#course-title { margin: 12px 100px; font-size:1.5rem; }
+}
+
+/* Tablets */
+@media (max-width:1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Small tablets / large phones */
+@media (max-width:768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  span#course-title { margin: 12px 60px; font-size:1.35rem; }
+}
+
+/* Mobile */
+@media (max-width:480px) {
+  .grid { grid-template-columns: 1fr; }
+  span#course-title { margin: 12px 36px; font-size:1.1rem; }
+}
