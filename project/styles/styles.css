@@ -1,0 +1,81 @@
+/* Color Variables */
+:root {
+    --primary-blue: #1670A7;
+    --secondary-green: #2BAE7F;
+    --accent-red: #E52521;
+    --background-gray: #E6E6E6;
+}
+
+/* Global Styling */
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: var(--background-gray);
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 120px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+section {
+    background: white;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Color Boxes */
+.color-box {
+    padding: 15px;
+    margin: 10px 0;
+    color: white;
+    border-radius: 5px;
+}
+
+.blue { background-color: var(--primary-blue); }
+.green { background-color: var(--secondary-green); }
+.red { background-color: var(--accent-red); }
+.gray { background-color: gray; }
+
+/* Typography Examples */
+.heading-font {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;
+}
+
+.body-font {
+    font-family: "Open Sans", sans-serif;
+}
+
+/* Wireframes */
+.wireframe {
+    border: 2px dashed var(--primary-blue);
+    padding: 15px;
+    margin-top: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
