@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Practice web development skills with WDD 131 – Dynamic Web Fundamentals by DERANJANAHARY.">
+    <meta name="author" content="DERANJANAHARY">
+    <title>Product Review Form</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body class="page">       
+<header class="site-header">
+    <span id="product">Product Review</span>         
+</header>
+
+<main class="site-main">
+
+<form method="get" action="review.html" class="review-form">
+
+<!-- Product Name -->
+<fieldset>
+    <label for="productName">Product Name</label>
+    <select id="productName" name="productName" required>
+        <option value="" disabled selected>Select a Product ...</option>
+</select>
+</fieldset>
+
+<!-- Overall Rating -->
+<fieldset>
+    <label>Overall Rating</label>
+
+    <label><input type="radio" id="rating1" name="rating" value="1" required> ☆</label>
+    <label><input type="radio" id="rating2" name="rating" value="2"> ☆☆</label>
+    <label><input type="radio" id="rating3" name="rating" value="3"> ☆☆☆</label>
+    <label><input type="radio" id="rating4" name="rating" value="4"> ☆☆☆☆</label>
+    <label><input type="radio" id="rating5" name="rating" value="5"> ☆☆☆☆☆</label>
+
+</fieldset>
+
+<!-- Date -->
+ <fieldset>
+    <label for="installDate">Date of Installation</label>
+    <input type="date" id="installDate" name="installDate" required>
+ </fieldset>
+
+
+<!-- Useful Features -->
+<fieldset>
+    <legend>Which features did you find useful? (Check all that apply)</legend>
+
+    <label><input type="checkbox" id="durability" name="features" value="Durability"> Durability</label>
+
+    <label><input type="checkbox" id="easeUse" name="features" value="Ease of Use"> Ease of Use</label>
+
+    <label><input type="checkbox" id="performance" name="features" value="Performance"> Performance</label>
+
+    <label><input type="checkbox" id="design" name="features" value="Design"> Design</label>
+
+</fieldset>
+
+<!-- Written Review -->
+<fieldset>
+    <label for="writtenReview">Written Review (Optional)</label>
+    <textarea id="writtenReview" name="writtenReview"></textarea>
+</fieldset>
+
+
+<!-- Username -->
+<fieldset>
+    <label for="username">Your Name (Optional)</label>
+    <input type="text" id="username" name="username">
+</fieldset>
+
+
+<!-- Submit -->
+<input type="submit" value="Post Review">
+
+</form>
+
+</main>
+
+<footer class="site-footer">
+    <p>&copy;<span id="currentyear"></span> &#10024; DERANJANAHARY &#10024; Madagascar</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+</footer>
+
+</body>
+</html>
