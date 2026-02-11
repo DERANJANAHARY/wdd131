@@ -1,9 +1,11 @@
+/* ===== BODY ===== */
 body {
     font-family: "Roboto", sans-serif;
     background-color: #ffffff;
     margin: 0;
 }
 
+/* ===== HEADER ===== */
 .site-header {
     background: #4b4957;
     color: white;
@@ -12,48 +14,79 @@ body {
     font-size: 1.4rem;
 }
 
+/* ===== MAIN LAYOUT ===== */
 .site-main {
     display: flex;
     justify-content: center;
     padding: 2rem;
 }
 
+/* ===== FORM CARD ===== */
 .review-form {
     background: #c7c4c4;
     padding: 1.5rem;
     border-radius: 8px;
     width: 420px;
+    box-sizing: border-box;
 }
 
-label {
-    display: block;
-    margin-top: 1rem;
-    font-weight: 500;
+/* ===== FIELDSETS ===== */
+fieldset {
+    margin-bottom: 1.2rem;
 }
 
-input {
-
-    padding: 0.5rem;
-    margin-top: 0.25rem;
+/* ===== LEGENDS ===== */
+legend {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
+/* ===== TEXT INPUTS ===== */
+input[type="text"],
+input[type="date"],
+select,
 textarea {
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.25rem;
+    border-radius: 4px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    display: block;
 }
 
-select {
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.25rem;
+textarea {
+    min-height: 80px;
+    resize: vertical;
 }
 
-fieldset{
-    padding-bottom: ;
+/* ===== RADIO BUTTONS ===== */
+fieldset > label input[type="radio"] {
+    margin-right: 6px;
 }
 
+fieldset > label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
 
+/* ===== CHECKBOXES ===== */
+fieldset > label input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+fieldset > label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* ===== SUBMIT BUTTON ===== */
 input[type="submit"] {
     margin-top: 1.5rem;
     padding: 0.7rem;
@@ -62,15 +95,63 @@ input[type="submit"] {
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
 }
 
 input[type="submit"]:hover {
     background: #555;
 }
 
+/* ===== FOOTER ===== */
 .site-footer {
     background: #4b4957;
     color: white;
     text-align: center;
     padding: 1rem;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets and small screens */
+@media (max-width: 600px) {
+    .review-form {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .site-main {
+        padding: 1rem;
+    }
+
+    fieldset > label {
+        font-size: 1.2rem;
+    }
+
+    input[type="submit"] {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 400px) {
+    .review-form {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    fieldset > label {
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+
+    input[type="submit"] {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .site-main {
+        padding: 0.5rem;
+    }
 }
