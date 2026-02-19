@@ -285,18 +285,30 @@ footer a {
 ========================= */
 
 @media (max-width: 768px) {
+    .hero-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        padding: 1rem;
+        color: black; /* change text color on small screens */
+    }
 
-    nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
+    .hero-content h2,
+    .hero-content p {
+        color: black; /* ensure headings and paragraph also black */
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .hero-img {
+        height: 200px;
+    }
 }
 
-.hero-img {
-    height: 250px;
-}
-
-main {
-    padding: 0.5rem;
-}
-
-}
