@@ -1,4 +1,6 @@
-/* FOOTER */
+/* ===============================
+   FOOTER
+================================= */
 
 const year = document.getElementById("currentyear");
 const modified = document.getElementById("lastModified");
@@ -7,7 +9,9 @@ if (year) year.textContent = new Date().getFullYear();
 if (modified) modified.textContent = document.lastModified;
 
 
-/* LESSON DATABASE */
+/* ===============================
+   LESSON DATABASE
+================================= */
 
 const lessons = [
 {
@@ -46,14 +50,18 @@ const lessons = [
 ];
 
 
-/* STATE */
+/* ===============================
+   GLOBAL STATE
+================================= */
 
 let score = Number(localStorage.getItem("score")) || 0;
 let completedLessons = JSON.parse(localStorage.getItem("completedLessons")) || [];
 let currentLessonId = null;
 
 
-/* LESSON PAGE */
+/* ===============================
+   LESSON PAGE ELEMENTS
+================================= */
 
 const lessonSelector = document.getElementById("lessonSelector");
 const loadLessonBtn = document.getElementById("loadLessonBtn");
@@ -66,6 +74,10 @@ const checkAnswerBtn = document.getElementById("checkAnswerBtn");
 
 const languageInputs = document.querySelectorAll("input[name='language']");
 
+
+/* ===============================
+   UPDATE LESSON OPTIONS
+================================= */
 
 function updateLessonOptions(language) {
 
@@ -86,10 +98,14 @@ function updateLessonOptions(language) {
 }
 
 
+/* ===============================
+   LOAD LESSON
+================================= */
+
 function loadLesson(id) {
 
-    const lesson = lessons.find(l => l.id == id);
-    if (!lesson) return;
+    const lesson = lessons.find(l => l.id === Number(id));
+    if (!lesson || !lessonContent) return;
 
     currentLessonId = lesson.id;
 
@@ -98,15 +114,23 @@ function loadLesson(id) {
         ${lesson.content}
     `;
 
-    questionText.textContent = lesson.question;
-    resultText.textContent = "";
-    answerInput.value = "";
+    if (questionText) questionText.textContent = lesson.question;
+    if (resultText) resultText.textContent = "";
+    if (answerInput) answerInput.value = "";
 }
 
 
+/* ===============================
+   CHECK ANSWER
+================================= */
+
 function checkAnswer() {
 
-    const lesson = lessons.find(l => l.id == currentLessonId);
+    if (!currentLessonId) return;
+
+    const lesson = lessons.find(l => l.id === Number(currentLessonId));
+    if (!lesson) return;
+
     const userAnswer = answerInput.value.toLowerCase().trim();
 
     if (userAnswer === lesson.answer) {
@@ -114,8 +138,9 @@ function checkAnswer() {
         score++;
         localStorage.setItem("score", score);
 
-        if (!completedLessons.includes(currentLessonId)) {
-            completedLessons.push(currentLessonId);
+        // Save completed lesson as number
+        if (!completedLessons.includes(Number(currentLessonId))) {
+            completedLessons.push(Number(currentLessonId));
             localStorage.setItem("completedLessons", JSON.stringify(completedLessons));
         }
 
@@ -129,7 +154,9 @@ function checkAnswer() {
 }
 
 
-/* PROGRESS PAGE */
+/* ===============================
+   PROGRESS PAGE DISPLAY
+================================= */
 
 function displayProgress() {
 
@@ -138,31 +165,36 @@ function displayProgress() {
     const savedLanguage = document.getElementById("savedLanguage");
     const lastLesson = document.getElementById("lastLesson");
 
-    if (!lessonHistory) return;
+    if (!lessonHistory) return; // Not on progress page
 
+    // Score
     totalScore.textContent = score;
 
+    // Language
     const language = localStorage.getItem("selectedLanguage");
-    if (language) savedLanguage.textContent = language;
+    if (language && savedLanguage) savedLanguage.textContent = language;
 
+    // Completed lessons
     lessonHistory.innerHTML = "";
 
     if (completedLessons.length === 0) {
         lessonHistory.innerHTML = "<li>No lessons completed yet.</li>";
-        return;
+    } else {
+        completedLessons.forEach(id => {
+            const lesson = lessons.find(l => l.id === Number(id));
+            if (!lesson) return;
+
+            const li = document.createElement("li");
+            li.textContent = lesson.title;
+            lessonHistory.appendChild(li);
+        });
+
+        const lastId = completedLessons[completedLessons.length - 1];
+        const last = lessons.find(l => l.id === Number(lastId));
+        if (last && lastLesson) lastLesson.textContent = last.title;
     }
 
-    completedLessons.forEach(id => {
-        const lesson = lessons.find(l => l.id === id);
-        const li = document.createElement("li");
-        li.textContent = lesson.title;
-        lessonHistory.appendChild(li);
-    });
-
-    const lastId = completedLessons[completedLessons.length - 1];
-    const last = lessons.find(l => l.id === lastId);
-    if (last) lastLesson.textContent = last.title;
-
+    // Clear progress button
     const clearBtn = document.getElementById("clearProgressBtn");
     clearBtn?.addEventListener("click", () => {
         localStorage.clear();
@@ -171,18 +203,24 @@ function displayProgress() {
 }
 
 
-/* EVENTS */
+/* ===============================
+   EVENT LISTENERS
+================================= */
 
+// Language selection
 languageInputs.forEach(input =>
     input.addEventListener("change", e =>
         updateLessonOptions(e.target.value)
     )
 );
 
+// Load lesson button
 loadLessonBtn?.addEventListener("click", () =>
     loadLesson(lessonSelector.value)
 );
 
+// Quiz check
 checkAnswerBtn?.addEventListener("click", checkAnswer);
 
+// Display progress automatically
 displayProgress();
