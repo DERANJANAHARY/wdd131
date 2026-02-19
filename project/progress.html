@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Progress | VirtuAllCourse</title>
+
+<link rel="stylesheet" href="styles/styles.css">
+<script defer src="scripts/script.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>VirtuAllCourse – Progress</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lessons.html">Lessons</a></li>
+            <li><a href="progress.html">Progress</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section class="card">
+    <h2>Your Progress</h2>
+
+    <p><strong>Language:</strong> <span id="savedLanguage">Not selected</span></p>
+    <p><strong>Total Score:</strong> <span id="totalScore">0</span></p>
+    <p><strong>Last Lesson:</strong> <span id="lastLesson">None</span></p>
+</section>
+
+<section class="card">
+    <h2>Completed Lessons</h2>
+    <ul id="lessonHistory">
+        <li>No lessons completed yet.</li>
+    </ul>
+
+    <button id="clearProgressBtn">Reset Progress</button>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; <span id="currentyear"></span> VirtuAllCourse</p>
+<p>Last modified: <span id="lastModified"></span></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lessons | VirtuAllCourse</title>
+
+<link rel="stylesheet" href="styles/styles.css">
+<script defer src="scripts/script.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>VirtuAllCourse – Lessons</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="lessons.html">Lessons</a></li>
+            <li><a href="progress.html">Progress</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<section class="card">
+    <h2>Select Language</h2>
+
+    <label>
+        <input type="radio" name="language" value="german"> German
+    </label>
+
+    <label>
+        <input type="radio" name="language" value="french"> French
+    </label>
+</section>
+
+<section class="card">
+    <h2>Select Lesson</h2>
+
+    <select id="lessonSelector"></select>
+    <button id="loadLessonBtn">Load Lesson</button>
+</section>
+
+<section class="card" id="lessonContent">
+    <h2>Lesson Content</h2>
+    <p>Select a lesson to begin.</p>
+</section>
+
+<section class="card">
+    <h2>Quiz</h2>
+
+    <p id="question"></p>
+
+    <input type="text" id="answerInput" placeholder="Type answer here">
+
+    <button id="checkAnswerBtn">Submit Answer</button>
+
+    <p id="result"></p>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; <span id="currentyear"></span> VirtuAllCourse</p>
+<p>Last modified: <span id="lastModified"></span></p>
+</footer>
+
+</body>
+</html>
